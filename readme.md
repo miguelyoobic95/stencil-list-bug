@@ -1,5 +1,5 @@
 
-# Stencil Listen Error
+# Stencil Listen Bug
 
 To build the repo simply run the following commands:
 
