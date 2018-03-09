@@ -1,17 +1,17 @@
 import { flush, render } from '@stencil/core/testing';
-import { MyComponent } from './my-component';
+import { ParentComponent } from './parent-component';
 
-describe('my-component', () => {
+describe('parent-component', () => {
   it('should build', () => {
-    expect(new MyComponent()).toBeTruthy();
+    expect(new ParentComponent()).toBeTruthy();
   });
 
   describe('rendering', () => {
     let element;
     beforeEach(async () => {
       element = await render({
-        components: [MyComponent],
-        html: '<my-component></my-component>'
+        components: [ParentComponent],
+        html: '<parent-component></parent-component>'
       });
     });
 

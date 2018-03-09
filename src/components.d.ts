@@ -20,29 +20,60 @@ declare global {
 
 
 import {
-  MyComponent as MyComponent
-} from './components/my-component/my-component';
+  ChildComponent as ChildComponent
+} from './components/child-component/child-component';
 
 declare global {
-  interface HTMLMyComponentElement extends MyComponent, HTMLStencilElement {
+  interface HTMLChildComponentElement extends ChildComponent, HTMLStencilElement {
   }
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  var HTMLChildComponentElement: {
+    prototype: HTMLChildComponentElement;
+    new (): HTMLChildComponentElement;
   };
   interface HTMLElementTagNameMap {
-    "my-component": HTMLMyComponentElement;
+    "child-component": HTMLChildComponentElement;
   }
   interface ElementTagNameMap {
-    "my-component": HTMLMyComponentElement;
+    "child-component": HTMLChildComponentElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "my-component": JSXElements.MyComponentAttributes;
+      "child-component": JSXElements.ChildComponentAttributes;
     }
   }
   namespace JSXElements {
-    export interface MyComponentAttributes extends HTMLAttributes {
+    export interface ChildComponentAttributes extends HTMLAttributes {
+      first?: string;
+      last?: string;
+    }
+  }
+}
+
+
+import {
+  ParentComponent as ParentComponent
+} from './components/parent-component/parent-component';
+
+declare global {
+  interface HTMLParentComponentElement extends ParentComponent, HTMLStencilElement {
+  }
+  var HTMLParentComponentElement: {
+    prototype: HTMLParentComponentElement;
+    new (): HTMLParentComponentElement;
+  };
+  interface HTMLElementTagNameMap {
+    "parent-component": HTMLParentComponentElement;
+  }
+  interface ElementTagNameMap {
+    "parent-component": HTMLParentComponentElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "parent-component": JSXElements.ParentComponentAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ParentComponentAttributes extends HTMLAttributes {
       first?: string;
       last?: string;
     }
